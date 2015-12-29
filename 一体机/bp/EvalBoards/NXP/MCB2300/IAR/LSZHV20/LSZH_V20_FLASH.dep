@@ -2,7 +2,7 @@
 
 <project>
   <fileVersion>2</fileVersion>
-  <fileChecksum>1119826652</fileChecksum>
+  <fileChecksum>4165422511</fileChecksum>
   <configuration>
     <name>Debug</name>
     <outputs>
@@ -1863,6 +1863,7 @@
       <file>$PROJ_DIR$\Release\Obj\os_time.pbi</file>
       <file>$PROJ_DIR$\Release\Obj\user_debug.o</file>
       <file>$PROJ_DIR$\Release\List\LSZH_V20_FLASH.log</file>
+      <file>$PROJ_DIR$\Release\Exe\LSZH_V20_FLASH_V3.51.bin</file>
     </outputs>
     <file>
       <name>$PROJ_DIR$\..\user\main.c</name>
@@ -2918,7 +2919,7 @@
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 155 191 216 196 82 202 186 53 71 182 189 197 38 85 37 173 65 166 69 194 190 3 198 1 193 200 33 63 156 87 56 78 151 163 73 184 207 187 206 6 30 35 7 212 83 150 178 67 76 57 80 61 180 177 158 55 188 192 209 185 195 199 203 201 208 204 175 32 205 215 174 214</file>
+          <file> 155 191 216 196 82 202 186 53 71 182 189 197 38 37 173 65 166 69 194 190 3 198 1 193 200 33 63 156 87 56 78 151 163 85 73 184 207 187 206 6 30 35 7 212 83 150 178 67 76 57 80 61 180 177 158 55 188 192 209 185 195 199 203 201 208 204 175 32 205 215 174 214</file>
         </tool>
         <tool>
           <name>ICCARM</name>
@@ -3082,7 +3083,7 @@
         </tool>
         <tool>
           <name>OBJCOPY</name>
-          <file> 149</file>
+          <file> 270</file>
         </tool>
       </outputs>
       <inputs>

@@ -6663,19 +6663,7 @@ Marking from fragment #2492 .text (8 User_power.o)
   Marking symbol .text_13                                (40 User_power.o)
     Marking fragment #2502 .text (8 User_power.o)
   Marking symbol IP_printf                          Glb  (85 user_debug.o)
-  Marking symbol Power_Beep                         Glb  (105 User_power.o)
-    Marking fragment #2516 .text (8 User_power.o)
   Marking symbol .text_14                                (41 User_power.o)
-Marking from fragment #2516 .text (8 User_power.o)
-  Marking symbol XCOM_Data_Read                     Glb  (141 User_XCOM.o)
-  Marking symbol ?_10                                    (5 User_power.o)
-    Marking fragment #2517 .text (8 User_power.o)
-  Marking symbol UART_printf                        Glb  (89 user_debug.o)
-  Marking symbol OSTimeDlyHMSM                      Glb  (34 os_time.o)
-  Marking symbol XCOM_Data_Read                     Glb  (141 User_XCOM.o)
-  Marking symbol ?_10                                    (5 User_power.o)
-  Marking symbol UART_printf                        Glb  (89 user_debug.o)
-Marking from fragment #2517 .text (8 User_power.o)
 Marking from fragment #2502 .text (8 User_power.o)
   Marking symbol ?_3                                     (7 User_power.o)
     Marking fragment #2483 .rodata (6 User_power.o)
@@ -9618,8 +9606,6 @@ References #2504 .text (8 User_power.o)
   Marking fragment #919 .debug_frame (28 User_power.o)
 References #2515 .text (8 User_power.o)
   Marking fragment #920 .debug_frame (30 User_power.o)
-References #2516 .text (8 User_power.o)
-  Marking fragment #921 .debug_frame (32 User_power.o)
 References #2518 .text (7 User_Run.o)
   Marking fragment #931 .debug_frame (13 User_Run.o)
 References #2522 .text (7 User_Run.o)
@@ -10211,9 +10197,6 @@ Marking from fragment #935 .debug_frame (22 User_Run.o)
 Marking from fragment #931 .debug_frame (13 User_Run.o)
   Marking symbol .debug_frame13                          (29 User_Run.o)
   Marking symbol .text7                                  (28 User_Run.o)
-Marking from fragment #921 .debug_frame (32 User_power.o)
-  Marking symbol .debug_frame32                          (60 User_power.o)
-  Marking symbol .text_27                                (59 User_power.o)
 Marking from fragment #920 .debug_frame (30 User_power.o)
   Marking symbol .debug_frame30                          (57 User_power.o)
   Marking symbol .text_26                                (56 User_power.o)
@@ -11299,10 +11282,10 @@ Selecting packing algorithm for 'auto' batches
 
 Veneer stats:
 
-   444 definitions
-  2634 references
+   443 definitions
+  2628 references
           3 R_ARM_THM_CALL
-       2505 R_ARM_CALL
+       2499 R_ARM_CALL
         126 R_ARM_JUMP24
      2 veneers                        16 bytes
           1 ARM v4 veneer                12 bytes
