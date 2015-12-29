@@ -809,7 +809,8 @@ void TASK_UART1Send(void *pdata)
         {
             pxrev = (struct XCOM_REV_TYPE *)p;
             UART_Send_Data(pxrev->XcomPort, p + sizeof(struct XCOM_REV_TYPE), pxrev->XcomLengh);
-            OSTimeDly(1);
+            //OSTimeDly(1);
+            OSTimeDlyHMSM(0, 0, 1, 0);//add wcf 修复发送间隔太短导致关机失败
             User_mem_free(p);
         }
 

@@ -30,3 +30,5 @@
 
 # Debug files
 *.dSYM/
+/一体机/bp/EvalBoards/NXP/MCB2300/IAR/LSZHV20/Debug/*
+/一体机/bp/EvalBoards/NXP/MCB2300/IAR/LSZHV20/Release/Obj/*.pbi

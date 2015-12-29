@@ -12,7 +12,7 @@
       <name>General</name>
       <archiveVersion>3</archiveVersion>
       <data>
-        <version>21</version>
+        <version>22</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -29,7 +29,7 @@
         </option>
         <option>
           <name>Variant</name>
-          <version>19</version>
+          <version>21</version>
           <state>1</state>
         </option>
         <option>
@@ -60,7 +60,7 @@
         </option>
         <option>
           <name>FPU</name>
-          <version>2</version>
+          <version>3</version>
           <state>0</state>
         </option>
         <option>
@@ -137,12 +137,12 @@
         </option>
         <option>
           <name>GFPUCoreSlave</name>
-          <version>19</version>
+          <version>21</version>
           <state>1</state>
         </option>
         <option>
           <name>GBECoreSlave</name>
-          <version>19</version>
+          <version>21</version>
           <state>1</state>
         </option>
         <option>
@@ -153,15 +153,23 @@
           <name>OGUseCmsisDspLib</name>
           <state>0</state>
         </option>
+        <option>
+          <name>GRuntimeLibThreads</name>
+          <state>0</state>
+        </option>
       </data>
     </settings>
     <settings>
       <name>ICCARM</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>28</version>
+        <version>31</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
+        <option>
+          <name>CCOptimizationNoSizeConstraints</name>
+          <state>0</state>
+        </option>
         <option>
           <name>CCDefines</name>
           <state></state>
@@ -225,7 +233,7 @@
         <option>
           <name>CCAllowList</name>
           <version>1</version>
-          <state>1001010</state>
+          <state>10010100</state>
         </option>
         <option>
           <name>CCDebugInfo</name>
@@ -402,13 +410,26 @@
           <name>IccFloatSemantics</name>
           <state>0</state>
         </option>
+        <option>
+          <name>CCNoLiteralPool</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCOptStrategySlave</name>
+          <version>0</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CCGuardCalls</name>
+          <state>1</state>
+        </option>
       </data>
     </settings>
     <settings>
       <name>AARM</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>8</version>
+        <version>9</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -564,6 +585,10 @@
           <name>AExtraOptionsV2</name>
           <state></state>
         </option>
+        <option>
+          <name>AsmNoLiteralPool</name>
+          <state>0</state>
+        </option>
       </data>
     </settings>
     <settings>
@@ -602,6 +627,7 @@
       <data>
         <extensions></extensions>
         <cmdline></cmdline>
+        <hasPrio>0</hasPrio>
       </data>
     </settings>
     <settings>
@@ -621,7 +647,7 @@
       <name>ILINK</name>
       <archiveVersion>0</archiveVersion>
       <data>
-        <version>14</version>
+        <version>16</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>1</debug>
         <option>
@@ -790,10 +816,6 @@
           <state>1</state>
         </option>
         <option>
-          <name>CrcAlgo</name>
-          <state>1</state>
-        </option>
-        <option>
           <name>CrcPoly</name>
           <state>0x11021</state>
         </option>
@@ -895,6 +917,20 @@
           <name>IlinkStackCallGraphFile</name>
           <state></state>
         </option>
+        <option>
+          <name>CrcAlgorithm</name>
+          <version>0</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcUnitSize</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkThreadsSlave</name>
+          <state>1</state>
+        </option>
       </data>
     </settings>
     <settings>
@@ -934,7 +970,7 @@
       <name>General</name>
       <archiveVersion>3</archiveVersion>
       <data>
-        <version>21</version>
+        <version>22</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
         <option>
@@ -951,7 +987,7 @@
         </option>
         <option>
           <name>Variant</name>
-          <version>19</version>
+          <version>21</version>
           <state>1</state>
         </option>
         <option>
@@ -982,7 +1018,7 @@
         </option>
         <option>
           <name>FPU</name>
-          <version>2</version>
+          <version>3</version>
           <state>0</state>
         </option>
         <option>
@@ -1009,7 +1045,7 @@
         </option>
         <option>
           <name>OGLastSavedByProductVersion</name>
-          <state>6.30.1.53141</state>
+          <state>7.30.3.8061</state>
         </option>
         <option>
           <name>GeneralEnableMisra</name>
@@ -1059,12 +1095,12 @@
         </option>
         <option>
           <name>GFPUCoreSlave</name>
-          <version>19</version>
+          <version>21</version>
           <state>1</state>
         </option>
         <option>
           <name>GBECoreSlave</name>
-          <version>19</version>
+          <version>21</version>
           <state>1</state>
         </option>
         <option>
@@ -1075,15 +1111,23 @@
           <name>OGUseCmsisDspLib</name>
           <state>0</state>
         </option>
+        <option>
+          <name>GRuntimeLibThreads</name>
+          <state>0</state>
+        </option>
       </data>
     </settings>
     <settings>
       <name>ICCARM</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>28</version>
+        <version>31</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
+        <option>
+          <name>CCOptimizationNoSizeConstraints</name>
+          <state>0</state>
+        </option>
         <option>
           <name>CCDefines</name>
           <state>NDEBUG</state>
@@ -1147,7 +1191,7 @@
         <option>
           <name>CCAllowList</name>
           <version>1</version>
-          <state>1001010</state>
+          <state>10010100</state>
         </option>
         <option>
           <name>CCDebugInfo</name>
@@ -1324,13 +1368,26 @@
           <name>IccFloatSemantics</name>
           <state>0</state>
         </option>
+        <option>
+          <name>CCNoLiteralPool</name>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCOptStrategySlave</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>CCGuardCalls</name>
+          <state>1</state>
+        </option>
       </data>
     </settings>
     <settings>
       <name>AARM</name>
       <archiveVersion>2</archiveVersion>
       <data>
-        <version>8</version>
+        <version>9</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
         <option>
@@ -1486,6 +1543,10 @@
           <name>AExtraOptionsV2</name>
           <state></state>
         </option>
+        <option>
+          <name>AsmNoLiteralPool</name>
+          <state>0</state>
+        </option>
       </data>
     </settings>
     <settings>
@@ -1524,6 +1585,7 @@
       <data>
         <extensions></extensions>
         <cmdline></cmdline>
+        <hasPrio>0</hasPrio>
       </data>
     </settings>
     <settings>
@@ -1543,7 +1605,7 @@
       <name>ILINK</name>
       <archiveVersion>0</archiveVersion>
       <data>
-        <version>14</version>
+        <version>16</version>
         <wantNonLocal>1</wantNonLocal>
         <debug>0</debug>
         <option>
@@ -1712,10 +1774,6 @@
           <state>1</state>
         </option>
         <option>
-          <name>CrcAlgo</name>
-          <state>1</state>
-        </option>
-        <option>
           <name>CrcPoly</name>
           <state>0x11021</state>
         </option>
@@ -1816,6 +1874,20 @@
         <option>
           <name>IlinkStackCallGraphFile</name>
           <state></state>
+        </option>
+        <option>
+          <name>CrcAlgorithm</name>
+          <version>0</version>
+          <state>1</state>
+        </option>
+        <option>
+          <name>CrcUnitSize</name>
+          <version>0</version>
+          <state>0</state>
+        </option>
+        <option>
+          <name>IlinkThreadsSlave</name>
+          <state>1</state>
         </option>
       </data>
     </settings>
@@ -2059,13 +2131,13 @@
       <name>$PROJ_DIR$\..\user\user_flash\LP2368_FLASH.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\user\user_flash\LP2368_flash.h</name>
+      <name>$PROJ_DIR$\..\user\user_flash\LP2368_FLASH.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\user\user_option\Lszh_hardware.h</name>
+      <name>$PROJ_DIR$\..\user\User_Option\Lszh_hardware.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\user\user_option\lszh_msg.h</name>
+      <name>$PROJ_DIR$\..\user\User_Option\lszh_msg.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\user\User_Option\PelcoD.c</name>
@@ -2077,7 +2149,7 @@
       <name>$PROJ_DIR$\..\user\User_Option\Use_key.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\user\user_option\Use_key.h</name>
+      <name>$PROJ_DIR$\..\user\User_Option\Use_key.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\user\user_debug\user_debug.c</name>
@@ -2089,7 +2161,7 @@
       <name>$PROJ_DIR$\..\user\User_Option\User_DW.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\user\user_option\User_DW.h</name>
+      <name>$PROJ_DIR$\..\user\User_Option\User_DW.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\user\user_mem\user_mem.c</name>
@@ -2101,19 +2173,19 @@
       <name>$PROJ_DIR$\..\user\User_Option\User_on_msg.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\user\user_option\user_on_msg.h</name>
+      <name>$PROJ_DIR$\..\user\User_Option\user_on_msg.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\user\User_Option\User_option.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\user\user_option\User_option.h</name>
+      <name>$PROJ_DIR$\..\user\User_Option\User_option.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\user\User_Option\User_power.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\user\user_option\User_power.h</name>
+      <name>$PROJ_DIR$\..\user\User_Option\User_power.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\user\User_Option\User_Run.c</name>
@@ -2122,25 +2194,25 @@
       <name>$PROJ_DIR$\..\user\User_Option\User_table.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\user\user_option\User_table.h</name>
+      <name>$PROJ_DIR$\..\user\User_Option\User_table.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\user\User_Option\User_TB.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\user\user_option\User_TB.h</name>
+      <name>$PROJ_DIR$\..\user\User_Option\User_TB.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\user\User_Option\User_udp.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\user\user_option\User_udp.h</name>
+      <name>$PROJ_DIR$\..\user\User_Option\User_udp.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\user\User_Option\User_XCOM.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\user\user_option\User_XCOM.h</name>
+      <name>$PROJ_DIR$\..\user\User_Option\User_XCOM.h</name>
     </file>
   </group>
 </project>
