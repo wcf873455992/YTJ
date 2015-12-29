@@ -1,0 +1,10 @@
+lib_str.o: ..\..\..\..\..\uC-LIB\lib_str.c
+lib_str.o: ..\..\..\..\..\uC-LIB\lib_str.h
+lib_str.o: ..\..\..\..\..\uC-CPU\ARM\RealView\cpu.h
+lib_str.o: ..\..\..\..\..\uC-CPU\cpu_def.h
+lib_str.o: ..\..\..\..\..\uC-LIB\lib_def.h
+lib_str.o: C:\Keil\ARM\RV31\INC\stdlib.h
+lib_str.o: C:\Keil\ARM\RV31\INC\ctype.h
+lib_str.o: C:\Keil\ARM\RV31\INC\errno.h
+lib_str.o: C:\Keil\ARM\RV31\INC\limits.h
+lib_str.o: C:\Keil\ARM\RV31\INC\stdio.h

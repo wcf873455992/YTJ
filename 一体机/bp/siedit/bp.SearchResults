@@ -1,0 +1,49 @@
+---- LED_Contrl Æ¥Åä (12 in 4 ÎÄ¼þ) ----
+User_on_msg.c (E:\bp\program\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option):34
+			LED_Contrl(LED_CONTRL_MIC_MUTE,TRUE);
+			break;
+		case MSG_DEV_SMIC:	 
+User_on_msg.c (E:\bp\program\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option):61
+			LED_Contrl(LED_CONTRL_MIC_MUTE,FALSE);
+			Device_InVol( 98,DEV_SOUND_MIC1);
+			break;
+User_on_msg.c (E:\bp\program\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option):120
+			LED_Contrl(LED_CONTRL_TIME_OFF,gDeviceTable.Class.TIME_LED_STATE);
+			if (gDeviceTable.Class.TIME_LED_STATE==FALSE)
+				gDeviceTable.Class.TIME_LED_STATE=TRUE;
+User_on_msg.c (E:\bp\program\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option):138
+			LED_Contrl(LED_CONTRL_TIME_OFF,gDeviceTable.Class.TIME_LED_STATE);
+			if (gDeviceTable.Class.TIME_LED_STATE==FALSE)
+				gDeviceTable.Class.TIME_LED_STATE=TRUE;
+User_on_msg.c (E:\bp\program\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option):153
+			LED_Contrl(LED_CONTRL_TIME_OFF,FALSE);
+		buf[0]=MSG_DEV_PC;
+		buf[1]=MSG_OPTION_NONE;	
+User_on_msg.c (E:\bp\program\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option):163
+			LED_Contrl(LED_CONTRL_TIME_OFF,TRUE);
+			Key_TB_state(KEY_REP_CLASS,TRUE);
+			if (Get_Debug(DEV_DEBUG_MSG))
+User_on_msg.c (E:\bp\program\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option):222
+	LED_Contrl(LED_CONTRL_TIME_OFF,FALSE);
+	gDeviceTable.Class.TIME_LED_STATE=FALSE;
+	flag=Class_Task_Start(1);
+User_on_msg.c (E:\bp\program\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option):307
+	LED_Contrl(LED_CONTRL_TIME_OFF,TRUE);
+	gDeviceTable.Class.TIME_LED_STATE=TRUE;
+	
+User_on_msg.c (E:\bp\program\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option):327
+		LED_Contrl(LED_CONTRL_TIME_OFF,TRUE);
+		Key_TB_state(KEY_REP_CLASS,TRUE);
+		if (Get_Debug(DEV_DEBUG_MSG))
+User_option.c (E:\bp\program\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option):1011
+ 	LED_Contrl(LED_CONTRL_TIME_OFF,TRUE);
+
+	
+Use_key.c (E:\bp\program\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option):43
+void LED_Contrl(uint16 Contrl,uint8 type) 
+{
+	uint8 buf[16],lg,err,i,tmp;
+Use_key.h (E:\bp\program\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option):195
+void LED_Contrl(uint16 Contrl,uint8 type);
+void KEY_Set_Vol(uint8 Vol);
+//Variable declare

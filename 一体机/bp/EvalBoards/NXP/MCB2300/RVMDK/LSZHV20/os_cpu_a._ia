@@ -1,0 +1,1 @@
+--device DARMP -g --apcs=interwork -I "C:\Keil\ARM\INC\Philips" --list ".\os_cpu_a.lst" --xref -o ".\os_cpu_a.o" "..\..\..\..\..\uCOS-II\Ports\ARM\Generic\RealView\os_cpu_a.asm"

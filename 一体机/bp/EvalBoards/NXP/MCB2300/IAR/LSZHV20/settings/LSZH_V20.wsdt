@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>LSZH_V20_FLASH/Release</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>378</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>723</ColumnWidth1><ColumnWidth2>193</ColumnWidth2><ColumnWidth3>48</ColumnWidth3></Build>
+    <Find-in-Files><ColumnWidth0>350</ColumnWidth0><ColumnWidth1>50</ColumnWidth1><ColumnWidth2>601</ColumnWidth2></Find-in-Files><TerminalIO/><Debug-Log><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>965</ColumnWidth1></Debug-Log><Disassembly><MixedMode>1</MixedMode><CodeCovShow>0</CodeCovShow><InstrProfShow>0</InstrProfShow></Disassembly></Static>
+    <Windows>
+      
+      
+    <Wnd0>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-1170-24511</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>LSZH_V20_FLASH</ExpandedNode><ExpandedNode>LSZH_V20_FLASH/APP</ExpandedNode><ExpandedNode>LSZH_V20_FLASH/BSP</ExpandedNode><ExpandedNode>LSZH_V20_FLASH/Device</ExpandedNode><ExpandedNode>LSZH_V20_FLASH/Device/Api</ExpandedNode><ExpandedNode>LSZH_V20_FLASH/Output</ExpandedNode><ExpandedNode>LSZH_V20_FLASH/User</ExpandedNode><ExpandedNode>LSZH_V20_FLASH/uCOS-II</ExpandedNode><ExpandedNode>LSZH_V20_FLASH/uCOS-II/Port</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-20764-25782</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-32747-32107</Identity><TabName>Find in Files</TabName><Factory>Find-in-Files</Factory><Session/></Tab><Tab><Identity>TabID-18358-24310</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd1></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>C:\Documents and Settings\Administrator\&#x684C;&#x9762;\new unit\&#x4e00;&#x4F53;&#x673A;V3.02\bp\EvalBoards\NXP\MCB2300\IAR\user\user_option\User_XCOM.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>347</SelStart><SelEnd>347</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Documents and Settings\Administrator\&#x684C;&#x9762;\new unit\&#x4e00;&#x4F53;&#x673A;V3.02\bp\EvalBoards\NXP\MCB2300\IAR\user\user_option\Lszh_hardware.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>114</SelStart><SelEnd>126</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Documents and Settings\Administrator\&#x684C;&#x9762;\new unit\&#x4e00;&#x4F53;&#x673A;V3.02\bp\EvalBoards\NXP\MCB2300\IAR\user\user_debug\user_debug.c</Filename><XPos>0</XPos><YPos>266</YPos><SelStart>6870</SelStart><SelEnd>6870</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Documents and Settings\Administrator\&#x684C;&#x9762;\new unit\&#x4e00;&#x4F53;&#x673A;V3.02\bp\EvalBoards\NXP\MCB2300\IAR\user\main.c</Filename><XPos>0</XPos><YPos>63</YPos><SelStart>1291</SelStart><SelEnd>1291</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Documents and Settings\Administrator\&#x684C;&#x9762;\new unit\&#x4e00;&#x4F53;&#x673A;V3.02\bp\EvalBoards\NXP\MCB2300\IAR\user\user_option\User_power.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>431</SelStart><SelEnd>431</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Documents and Settings\Administrator\&#x684C;&#x9762;\new unit\&#x4e00;&#x4F53;&#x673A;V3.02\bp\EvalBoards\NXP\MCB2300\IAR\user\user_option\Lszh_msg.h</Filename><XPos>0</XPos><YPos>72</YPos><SelStart>2919</SelStart><SelEnd>2940</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Documents and Settings\Administrator\&#x684C;&#x9762;\new unit\&#x4e00;&#x4F53;&#x673A;V3.02\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option\User_Run.c</Filename><XPos>0</XPos><YPos>237</YPos><SelStart>6494</SelStart><SelEnd>6494</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Documents and Settings\Administrator\&#x684C;&#x9762;\new unit\&#x4e00;&#x4F53;&#x673A;V3.02\bp\EvalBoards\NXP\MCB2300\IAR\Device\PT2258\PT2258.C</Filename><XPos>0</XPos><YPos>524</YPos><SelStart>13589</SelStart><SelEnd>13589</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Documents and Settings\Administrator\&#x684C;&#x9762;\new unit\&#x4e00;&#x4F53;&#x673A;V3.02\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option\User_XCOM.c</Filename><XPos>0</XPos><YPos>655</YPos><SelStart>19331</SelStart><SelEnd>19345</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Documents and Settings\Administrator\&#x684C;&#x9762;\new unit\&#x4e00;&#x4F53;&#x673A;V3.02\bp\EvalBoards\NXP\MCB2300\IAR\Device\UART\uart.c</Filename><XPos>0</XPos><YPos>565</YPos><SelStart>16102</SelStart><SelEnd>16102</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Documents and Settings\Administrator\&#x684C;&#x9762;\new unit\&#x4e00;&#x4F53;&#x673A;V3.02\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option\User_udp.c</Filename><XPos>0</XPos><YPos>154</YPos><SelStart>5088</SelStart><SelEnd>5088</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Documents and Settings\Administrator\&#x684C;&#x9762;\new unit\&#x4e00;&#x4F53;&#x673A;V3.02\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option\User_on_msg.c</Filename><XPos>0</XPos><YPos>1650</YPos><SelStart>44448</SelStart><SelEnd>44467</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Documents and Settings\Administrator\&#x684C;&#x9762;\new unit\&#x4e00;&#x4F53;&#x673A;V3.02\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option\User_table.c</Filename><XPos>0</XPos><YPos>306</YPos><SelStart>8031</SelStart><SelEnd>8031</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Documents and Settings\Administrator\&#x684C;&#x9762;\new unit\&#x4e00;&#x4F53;&#x673A;V3.02\bp\EvalBoards\NXP\MCB2300\IAR\user\user_option\User_table.h</Filename><XPos>0</XPos><YPos>175</YPos><SelStart>4114</SelStart><SelEnd>4114</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Documents and Settings\Administrator\&#x684C;&#x9762;\new unit\&#x4e00;&#x4F53;&#x673A;V3.02\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option\User_DW.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>4227</SelStart><SelEnd>4227</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Documents and Settings\Administrator\&#x684C;&#x9762;\new unit\&#x4e00;&#x4F53;&#x673A;V3.02\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option\Use_key.c</Filename><XPos>0</XPos><YPos>893</YPos><SelStart>24909</SelStart><SelEnd>24909</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Documents and Settings\Administrator\&#x684C;&#x9762;\new unit\&#x4e00;&#x4F53;&#x673A;V3.02\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option\User_power.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>18729</SelStart><SelEnd>18729</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Documents and Settings\Administrator\&#x684C;&#x9762;\new unit\&#x4e00;&#x4F53;&#x673A;V3.02\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option\User_option.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>91</SelStart><SelEnd>91</SelEnd></Tab><ActiveTab>17</ActiveTab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-00b0ce28><key>iaridepm.enu1</key></Toolbar-00b0ce28></Sizes></Row0></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>578</Bottom><Right>469</Right><x>-2</x><y>-2</y><xscreen>251</xscreen><yscreen>93</yscreen><sizeHorzCX>250249</sizeHorzCX><sizeHorzCY>113971</sizeHorzCY><sizeVertCX>469591</sizeVertCX><sizeVertCY>710784</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>193</Bottom><Right>1005</Right><x>-2</x><y>-2</y><xscreen>1007</xscreen><yscreen>195</yscreen><sizeHorzCX>1003988</sizeHorzCX><sizeHorzCY>238971</sizeHorzCY><sizeVertCX>250249</sizeVertCX><sizeVertCY>113971</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

@@ -1,0 +1,71 @@
+*** Creating Trace Output File 'LSZH_V20.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"main.o"'
+### List of Objects: adding '".\vectors.o"'
+### List of Objects: adding '".\init.o"'
+### List of Objects: adding '"target.o"'
+### List of Objects: adding '"hw.o"'
+### List of Objects: adding '"i2c0int.o"'
+### List of Objects: adding '"i2c1int.o"'
+### List of Objects: adding '"dma.o"'
+### List of Objects: adding '"i2s.o"'
+### List of Objects: adding '"tms320aic23.o"'
+### List of Objects: adding '"use_sound.o"'
+### List of Objects: adding '"io.o"'
+### List of Objects: adding '"cd22m3494.o"'
+### List of Objects: adding '"pt2258.o"'
+### List of Objects: adding '"realtime.o"'
+### List of Objects: adding '"sc16is752.o"'
+### List of Objects: adding '"os_api.o"'
+### List of Objects: adding '"arp.o"'
+### List of Objects: adding '"ethernet.o"'
+### List of Objects: adding '"hardware_int.o"'
+### List of Objects: adding '"ip.o"'
+### List of Objects: adding '"icmp.o"'
+### List of Objects: adding '"udp.o"'
+### List of Objects: adding '"uart.o"'
+### List of Objects: adding '".\cpu_a.o"'
+### List of Objects: adding '".\os_cpu_a.o"'
+### List of Objects: adding '"lib_mem.o"'
+### List of Objects: adding '"lib_str.o"'
+### List of Objects: adding '"os_cpu_c.o"'
+### List of Objects: adding '"os_dbg.o"'
+### List of Objects: adding '"os_core.o"'
+### List of Objects: adding '"os_flag.o"'
+### List of Objects: adding '"os_mbox.o"'
+### List of Objects: adding '"os_mem.o"'
+### List of Objects: adding '"os_mutex.o"'
+### List of Objects: adding '"os_q.o"'
+### List of Objects: adding '"os_sem.o"'
+### List of Objects: adding '"os_task.o"'
+### List of Objects: adding '"os_time.o"'
+### List of Objects: adding '"os_tmr.o"'
+### List of Objects: adding '"user_debug.o"'
+### List of Objects: adding '"lp2368_flash.o"'
+### List of Objects: adding '"user_mem.o"'
+### List of Objects: adding '"pelcod.o"'
+### List of Objects: adding '"use_key.o"'
+### List of Objects: adding '"user_dw.o"'
+### List of Objects: adding '"user_on_msg.o"'
+### List of Objects: adding '"user_option.o"'
+### List of Objects: adding '"user_power.o"'
+### List of Objects: adding '"user_table.o"'
+### List of Objects: adding '"user_tb.o"'
+### List of Objects: adding '"user_udp.o"'
+### List of Objects: adding '"user_xcom.o"'
+### ADS-LD Command completed:
+--device DARMP "main.o" ".\vectors.o" ".\init.o" "target.o" "hw.o" "i2c0int.o" "i2c1int.o" "dma.o" "i2s.o" "tms320aic23.o" "use_sound.o" "io.o" "cd22m3494.o" "pt2258.o" "realtime.o" "sc16is752.o" "os_api.o" "arp.o" "ethernet.o" "hardware_int.o" "ip.o" "icmp.o" "udp.o" "uart.o" ".\cpu_a.o" ".\os_cpu_a.o" "lib_mem.o" "lib_str.o" "os_cpu_c.o" "os_dbg.o" "os_core.o" "os_flag.o" "os_mbox.o" "os_mem.o" "os_mutex.o" "os_q.o" "os_sem.o" "os_task.o" "os_time.o" "os_tmr.o" "user_debug.o" "lp2368_flash.o" "user_mem.o" "pelcod.o" "use_key.o" "user_dw.o" "user_on_msg.o" "user_option.o" "user_power.o" "user_table.o" "user_tb.o" "user_udp.o" "user_xcom.o" --strict --scatter "..\..\IAR\BSP\inchip.scf" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\LSZH_V20.map" -o "LSZH_V20.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'LSZH_V20.axf'
+### ADS-LD Command File: 'LSZH_V20.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'LSZH_V20.lnp', Handle=0x000000F4
+### Writing '.lnp' file
+### ADS-LD Command file 'LSZH_V20.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

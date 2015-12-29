@@ -1,0 +1,4 @@
+--device DARMP "main.o" ".\vectors.o" ".\init.o" "target.o" "hw.o" "i2c0int.o" "i2c1int.o" "dma.o" "i2s.o" "tms320aic23.o" "use_sound.o" "io.o" "cd22m3494.o" "pt2258.o" "realtime.o" "sc16is752.o" "os_api.o" "arp.o" "ethernet.o" "hardware_int.o" "ip.o" "icmp.o" "udp.o" "uart.o" ".\cpu_a.o" ".\os_cpu_a.o" "lib_mem.o" "lib_str.o" "os_cpu_c.o" "os_dbg.o" "os_core.o" "os_flag.o" "os_mbox.o" "os_mem.o" "os_mutex.o" "os_q.o" "os_sem.o" "os_task.o" "os_time.o" "os_tmr.o" "user_debug.o" "lp2368_flash.o" "user_mem.o" "pelcod.o" "use_key.o" "user_dw.o" "user_on_msg.o" "user_option.o" "user_power.o" "user_table.o" "user_tb.o" "user_udp.o" "user_xcom.o" --strict --scatter "..\..\IAR\BSP\inchip.scf" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\LSZH_V20.map" -o "LSZH_V20.axf"

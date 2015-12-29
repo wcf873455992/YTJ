@@ -1,0 +1,18 @@
+
+LR_IROM1 0x00000000 0x00080000 									;; Load region
+{
+    ER_IROM1 0x00000000	0x00080000
+    {
+        vectors.o (VECT, +First)
+        init.o (INIT)
+        * (+RO)
+    }
+
+    RW_IRAM1 0x40000000 0x00007000
+    {
+        * (+RW,+ZI)
+    }                                                           ;; The following declarations select the "two region model" ;
+                                                                ;; A default __user_initial_stackheap() will be used        ;
+    ARM_LIB_HEAP  0x40007000 EMPTY  0x00000100   {}
+    ARM_LIB_STACK 0x40008000 EMPTY -0x00000E00   {}
+}

@@ -1,0 +1,33 @@
+
+ROM_LOAD 0x00010000
+{
+    ROM_EXEC 0x00010000
+    {
+        Startup.o (vectors, +First)
+        * (+RO)
+    }
+
+    IRAM 0x40000040
+    {
+        Startup.o (MyStacks)
+        * (+RW,+ZI)
+    }
+
+    HEAP +0 UNINIT
+    {
+        Startup.o (Heap)
+    }
+
+    STACKS_BOTTOM +0
+    {
+        Startup.o (StackBottom)
+    }
+
+    STACKS 0x40007f00 UNINIT    ;for LPC2366/68/78
+;    STACKS 0x40002000 UNINIT    ;for LPC2364
+    {
+        Startup.o (HeapTop)
+        Startup.o (Stacks)
+    }
+}
+
