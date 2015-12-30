@@ -410,27 +410,6 @@ void TASK_RUN(void *pdata)
         LMT_Power_Check();
         Device_DCS_Contrl();
         RF_CARD_Check();
-
-        Switch_HDMI(IN_PC, OUT_TYJ1);
-        Switch_HDMI(IN_NPC, OUT_TYJ1);
-        Switch_HDMI(IN_ZJ, OUT_TYJ1);
-        Switch_HDMI(IN_ZBFWQ, OUT_TYJ1);
-        
-        Switch_HDMI(IN_PC, OUT_TYJ2);
-        Switch_HDMI(IN_NPC, OUT_TYJ2);
-        Switch_HDMI(IN_ZJ, OUT_TYJ2);
-        Switch_HDMI(IN_ZBFWQ, OUT_TYJ2);
-        
-        Switch_HDMI(IN_PC, OUT_LBFWQ);
-        Switch_HDMI(IN_NPC, OUT_LBFWQ);
-        Switch_HDMI(IN_ZJ, OUT_LBFWQ);
-        Switch_HDMI(IN_ZBFWQ, OUT_LBFWQ);
-        
-        Switch_HDMI(IN_PC, OUT_ZBFWQ);
-        Switch_HDMI(IN_NPC, OUT_ZBFWQ);
-        Switch_HDMI(IN_ZJ, OUT_ZBFWQ);
-        Switch_HDMI(IN_ZBFWQ, OUT_ZBFWQ);
-        
         
         if (ReadWD++ > 60)
         {

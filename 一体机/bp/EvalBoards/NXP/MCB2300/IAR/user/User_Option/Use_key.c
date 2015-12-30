@@ -788,12 +788,6 @@ key_loop:
         //gDeviceStatus.MK_Vol &=0x7FFF;
         KEY_DATA.key_rep |= KEY_REP_PLAY_PUSH;
         ////////////////////////////
-        //VGA_Select(1,2);
-        //VGA_Select1(1,3);
-        //Video_Select(3,7);
-        //Video_Select(6,9);
-        //Video_Select(2,8);
-        //////////////////////////////
         break;
     case KEY_DEVICE_DVD:
         IP_printf("dvdÑ¡Ôñ¼ü");
@@ -807,14 +801,6 @@ key_loop:
         gDeviceStatus.MK_Vol &= 0x7FFF;
         KEY_DATA.key_rep |= KEY_REP_PLAY_PUSH;
         /////////////////////////////
-        //VGA_Select1(1,3);
-        //VGA_Select1(1,2);
-        //AV_Select(4,6,TRUE);
-        //AV_Select(1,5,TRUE);
-        //AV_Select(3,7,TRUE);
-        //AV_Select(6,9,TRUE);
-        //AV_Select(2,8,TRUE);
-        //////////////////////////////
         break;
     case KEY_DEVICE_RECODER://19//Â¼Òô»ú
         IP_printf("Â¼Òô»úÑ¡Ôñ¼ü");

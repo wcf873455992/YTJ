@@ -803,7 +803,7 @@ return tmp;
 //	出口参数：无
 ////////////////////////////////////////////////////////////////////
 void Device_Video_Select(BYTE in,BYTE out)
-{//uint8 tmp;
+{       uint8 i;
 	if ((in>VIDEO_IN_CHANLE_SIZE)||(out>VIDEO_OUT_CHANLE_SIZE)) return;
 	if ((in==0)||(out==0)) return;
 	if (DEVICE_LINK.Video_Out[out]==in)
@@ -813,6 +813,12 @@ void Device_Video_Select(BYTE in,BYTE out)
 		 AV_Select(in, out,TRUE);	
 		 DEVICE_LINK.Video_Out[out]=in;
 		}
+        //////////
+        if(in == DEV_VIDEO_LXJ)
+        {
+          for(i = 0; i < 4; i++)
+            Switch_HDMI(IN_ZBFWQ, i);
+        }
 	
 }
   /////////////////////////////////////////////////////////////////////
@@ -857,6 +863,7 @@ void Device_Video_Select(BYTE in,BYTE out)
 ////////////////////////////////////////////////////////////////////
 void Device_VGA_Select(BYTE in,BYTE out)
 {
+      uint8 tmp_in = 0,i = 0;
 	if ((in>VGA_IN_CHANLE_SIZE)||(out>=VGA_OUT_CHANLE_SIZE)) return;
 	//if (out==DEV_VGA_OUT_TB1) return;
 	if ((in==0)||(out==0)) return;
@@ -867,6 +874,13 @@ void Device_VGA_Select(BYTE in,BYTE out)
 		 VGA_Select(in, out,TRUE);	
 		 DEVICE_LINK.VGA_Out[out-1]=in;
 		}
+        //////////
+        if(in == DEV_VGA_PC ) tmp_in = IN_PC;
+        if(in == DEV_VGA_NPC) tmp_in = IN_NPC;
+        if(in == DEV_VGA_SHOW) tmp_in= IN_ZJ;        
+        for(i = 0; i < 4; i++)
+          Switch_HDMI(tmp_in,i);
+        
 }
   /////////////////////////////////////////////////////////////////////
 //	函数名称：
