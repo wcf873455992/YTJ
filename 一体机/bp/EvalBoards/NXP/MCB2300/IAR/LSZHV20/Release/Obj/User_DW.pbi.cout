@@ -1,4 +1,4 @@
-"F:\code\YTJ\一体机\bp\uCOS-II\Source\os_core.c"
+"F:\code\YTJ\一体机\bp\EvalBoards\NXP\MCB2300\IAR\user\User_Option\User_DW.c"
 -std=c99
 -ferror-limit=100
 -I
@@ -255,7 +255,7 @@ F:\code\YTJ\一体机\bp\uCOSView\Ports\ARM7\LPC2378\IAR
 -D__IAR_COMPILERBASE__=594179
 -D_GOANNA=1
 -D__DATE__="Dec 30 2015"
--D__TIME__="09:44:12"
+-D__TIME__="09:44:26"
 -D__STDC__=1
 -D__STDC_VERSION__=199901L
 -D__STDC_HOSTED__=1
