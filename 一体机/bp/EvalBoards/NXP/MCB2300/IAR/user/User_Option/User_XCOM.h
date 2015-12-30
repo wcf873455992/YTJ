@@ -22,6 +22,16 @@
 #define ZY_XCOM_FLAG_ACK      	0xf2
 #define ZY_XCOM_PROTOCOL_SIZE    3
 
+//新增HDMI矩阵切换器
+#define IN_PC                   0x00        //讲台课件
+#define IN_NPC                  0x01        //笔记本
+#define IN_ZJ                   0x02        //助教
+#define IN_ZBFWQ                0x03        //直播服务器
+#define OUT_TYJ1                0x00      //投影机1
+#define OUT_TYJ2                0x01        //投影机2
+#define OUT_LBFWQ               0x02        //录播服务器
+#define OUT_ZBFWQ               0x03        //直播服务器
+
 
 #define UART_SEND_WAIT_TIME       50
 struct ZY_XCOM

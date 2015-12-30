@@ -699,6 +699,34 @@ void XCOM_ICREADER(uint8 *pdata)
     RFIC_K103_Mode(pdata);
 }
 
+void XCOM_HDMI(uint8 *pdata)
+{
+    uint8 *p; //,cmd;
+    struct XCOM_REV_TYPE *prev;
+    
+    prev = ( struct XCOM_REV_TYPE *)pdata;   
+    p = ( uint8 *)(pdata + sizeof( struct XCOM_REV_TYPE));
+    //if (Get_Debug(DEV_DEBUG_MSG))
+        IP_printf("COM HDMI  receive state:%s",*p, *(p+1),*(p+2) );
+    
+}
+
+void Switch_HDMI(uint8 in, uint8 out)
+{
+  uint8 data[5]={0x05, 0x55, 0x19, 0xff, 0x77};
+  uint8 cmd[4][4]={ 0x09, 0x1D, 0x1F, 0x0D,     //out1,in 1-4
+                    0x17, 0x12, 0x59, 0x08,     //out2,in 1-4
+                    0x5E, 0x06, 0x05, 0x03,     //out3,in 1-4
+                    0x18, 0x44, 0x0F, 0x51      //out4,in 1-4
+                    };
+  if( (in > IN_ZBFWQ)||(out > OUT_ZBFWQ)) return;
+  
+  data[3] = cmd[out][in];
+  //if (Get_Debug(DEV_DEBUG_MSG))
+      IP_printf("send HDMI cmd:0x%2x 0x%x 0x%x 0x%2x 0x%x\n",data[0],data[1],data[2],data[3],data[4]);
+  UART_Write(DEV_XCOM_SOUND, (uint8 *)&data, sizeof(data));
+  OSTimeDlyHMSM(0, 0, 1, 0);
+}
 
 ////////////////////////////////////////////////////////////////////
 //	函数名称：
@@ -993,7 +1021,8 @@ void TASK_UART(void *pdata)
                 break;
             case DEV_XCOM_SOUND://音频级联板用作刷卡开机
                 //XCOM_Send_ACK(p);
-                XCOM_ICREADER(p);
+                //XCOM_ICREADER(p);  
+                  XCOM_HDMI(p);
                 break;
             case DEV_XCOM_TB:
                 XCOM_SCAMERA1(p);//同步板(增益卡)用作球机控制

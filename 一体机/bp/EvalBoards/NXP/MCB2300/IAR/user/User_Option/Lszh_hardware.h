@@ -4,7 +4,7 @@
 #define DEV_XCOM_DW					0x00//定位板串口(编辑卡)
 #define DEV_XCOM_TYJ					0x01//投影机串口RS232
 #define DEV_XCOM_SOUND					0x02//音频级联板(新版一体机3.0以后用作读卡器串口)
-#define DEV_XCOM_TB						0x03//同步板串口(增益卡)(新版一体机3.0以后用做球机控制)
+#define DEV_XCOM_TB					0x03//同步板串口(增益卡)(新版一体机3.0以后用做球机控制)
 
 #define DEV_XCOM_MB					0x04//面板串口
 #define DEVICE_SUB_MB				0x08 //面板子地址
