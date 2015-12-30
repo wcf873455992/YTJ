@@ -1,4 +1,6 @@
 #测试忽略规则
+/一体机/bp/EvalBoards/NXP/MCB2300/IAR/LSZHV20/Release/Obj/
+/一体机/bp/EvalBoards/NXP/MCB2300/IAR/LSZHV20/Release/List/
 
 
 # Object files
@@ -6,6 +8,9 @@
 *.ko
 *.obj
 *.elf
+
+*.pbi
+*.*.cout
 
 # Precompiled Headers
 *.gch
@@ -34,5 +39,5 @@
 # Debug files
 *.dSYM/
 /一体机/bp/EvalBoards/NXP/MCB2300/IAR/LSZHV20/Debug/*
-/一体机/bp/EvalBoards/NXP/MCB2300/IAR/LSZHV20/Release/Obj/
-/一体机/bp/EvalBoards/NXP/MCB2300/IAR/LSZHV20/Release/List/
+一体机/bp/EvalBoards/NXP/MCB2300/IAR/LSZHV20/Release/Obj/
+/一体机/bp/EvalBoards/NXP/MCB2300/IAR/LSZHV20/Release/List/*
