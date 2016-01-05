@@ -33,6 +33,7 @@ void LAN_Test_Ack(uint8 *pdata, uint16 lg)
 //
 //	出口参数：无
 ////////////////////////////////////////////////////////////////////
+extern uint8 PAD_ip[4];
 void UDP_Send_CMD(BYTE *pdata, uint16 lg, uint8 *des_ip)
 {
     struct  _pkst udata, udatah, *pst;
@@ -72,6 +73,8 @@ void UDP_Send_CMD(BYTE *pdata, uint16 lg, uint8 *des_ip)
     pnet = (NetP *)Get_NetPort();
     if (IP_Compare(des_ip, pnet->CMD_IP) && (pnet->CMD_IP_TTL == 0)) return;
     if (IP_Compare(des_ip, pnet->Ser_Ip)) return;
+    if (IP_Compare(des_ip, PAD_ip)) return;
+
     p = (uint8 *)User_mem_allco(sizeof(struct MSG_OPTION_COMM_TYPE) + lg + sizeof(IC2CMD_Header));
     if (p == NULL) return;
 

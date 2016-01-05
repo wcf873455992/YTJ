@@ -167,6 +167,7 @@ for (psd=TxdData;psd!=NULL;psd=psd->STPTR)
 //			
 //	出口参数：无
 ////////////////////////////////////////////////////////////////////
+extern NetP NetPort;
 uint8 IP_ReceivePacket(BYTE *pdata)//ip报处理
 {
 	eip  *prec;
@@ -178,6 +179,12 @@ uint8 IP_ReceivePacket(BYTE *pdata)//ip报处理
 	p = (BYTE *)(pdata+sizeof(eip));
 	if (IP_Check((BYTE * )pdata) == FALSE) 
 		return FALSE;
+        
+        for(uint8 i=0;i<4;i++)  //临时保存源IP地址，供保存ＰＡＤ的ＩＰ
+        {
+          NetPort.CMD_IP[i]=(*prec).SourceIp[i];          
+        }
+        
 	switch(prec->NextProtocal)
 	{	
 	case 1://ICMP

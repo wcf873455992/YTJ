@@ -816,7 +816,7 @@ void Device_Video_Select(BYTE in,BYTE out)
         //////////
         if(in == DEV_VIDEO_LXJ)
         {
-          for(i = 0; i < 4; i++)
+          for(i = 0; i < 3; i++)
             Switch_HDMI(IN_ZBFWQ, i);
         }
 	
@@ -874,7 +874,9 @@ void Device_VGA_Select(BYTE in,BYTE out)
 		 VGA_Select(in, out,TRUE);	
 		 DEVICE_LINK.VGA_Out[out-1]=in;
 		}
-        //////////
+        ///////////////////ÍâÖÃDVIÇÐ»»Æ÷£¬ºìÍâÑ§Âë
+        Switch_DVI(in);//add 2016.1.5
+        //////////HDMI¾ØÕó
         if(in == DEV_VGA_PC ) tmp_in = IN_PC;
         if(in == DEV_VGA_NPC) tmp_in = IN_NPC;
         if(in == DEV_VGA_SHOW) tmp_in= IN_ZJ;        

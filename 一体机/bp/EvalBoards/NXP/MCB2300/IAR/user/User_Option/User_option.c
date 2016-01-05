@@ -2,7 +2,7 @@
 #include "Os_api.h"
 #include "ARP.H"
 
-#define LSZH_VER		0x0334//v3.51
+#define LSZH_VER		0x034a//v3.73
 //2011.3.8		0x020d     v2.13调试双工对讲
 //2011.3.14		0x020E     v2.14RF卡开机
 //2011.3.17            0x020f       V2.15  调整看门狗复位
@@ -27,8 +27,11 @@
 //2012.10.22          0x0302      V3.02   修正232球机串口返回处理错误
 //2012.11.30          0x0303      V3.03   修正南农刷卡开机缓冲区溢出问题
 //2013.2.28           0x0305      V3.05   解决周日自动开机和程序无法升级问题，user_table.c和I2C1INT.c文件
-
-//2015.12.30          0x0334      V3.51   L5000改造，增加外置HDMI矩阵切换控制。
+//2014.9.4            0x030f      v3.15   投影机开机码延迟重复发送2次，延迟时间在开机序列配置
+//2014.9.5          0x0305      V3.07     增加 安卓APP控制,发送状态给APP
+//2015.3.19           0x0347    V3.71      增加 外置DVI切换器，通过DVD红外学码实现
+//2015.6.25          0x0348    V3.72      更改流媒体开关机控制
+//2015.10.14         0x0349    V3.73      延长球机控制停止命令（方向停止、聚焦停止、变焦停止）发送间隔时间
 OS_EVENT *MSG_PQ;			//消息队列
 void *MSG_Q[MSG_MAX_SIZE];	//消息队列
 const  unsigned char def_classname[] = "卓越测试教室";
@@ -37,6 +40,8 @@ const  unsigned char def_housename[] = "设备记录空";
 const  uint8 def_ip[4] = {192, 168, 7, 101};
 const  uint8 def_mark[4] = {255, 255, 0, 0};
 const  uint8 def_gateip[4] = {192, 168, 0, 190};
+
+uint8 PAD_ip[4] = {192, 168, 7, 250};
 
 struct DEVICE_STATUS_TYPE gDeviceStatus;
 struct DEVICE_REC_TYPE gDeviceTable;
@@ -673,6 +678,7 @@ BYTE Class_Task_Start(BYTE id)
     buf[0] = MSG_DEV_MAINBARD;
     buf[1] = MSG_OPTION_MSG_RUN;
     rev_buf[0] = DEV_XCOM_SELF;
+    IP_printf("ClassTaskNum=%d", gDeviceTable.Class.ClassTaskNum);
     Task_Run_Delay(REALTIME_CIIR_SEC * 256 + 1, buf, 2, gDeviceTable.Class.ClassTaskNum, rev_buf);
     return CLASS_TASK_OK;
 }
@@ -1066,6 +1072,16 @@ void CameraPowerInit(void)
 
 }
 
+void SAVE_IPAD_ip(void) //保存PADip
+{
+
+    BYTE *desip;//add for PAD
+    desip = Get_DesIp(DEVICE_SUB_CMD);
+    memcpy(PAD_ip, desip, 4);
+
+}
+
+
 
 /////////////////////////////////////////////////////////////////////
 //	函数名称：
@@ -1162,9 +1178,9 @@ void User_Option(void)
                 case MSG_OPTION_POWEROPEN:		//0x01 //设备打开/上升
                 case MSG_OPTION_POWERCLOSE:		//0x02 //设备关闭
                 case MSG_OPTION_POWERDOWN:		//0x03 //设备下降
-                    flag = On_MSG_Power_OPTION((void *)pdata); //先发送关闭红外/串口命令
+                    flag = On_MSG_Power_OPTION((void *)pdata); //先发送红外/串口命令
                     flag = ON_POWER_option((void *)pdata);
-                    flag = On_MSG_Power_OPTION((void *)pdata); //先发送关闭红外/串口命令
+                    //flag=On_MSG_Power_OPTION((void *)pdata); //先发送关闭红外/串口命令
                     break;
                 case MSG_OPTION_MUTEOPEN:		//0x04 //设备静音
                 case MSG_OPTION_MUTECLOSE:		//0x05 //设备静音关闭
@@ -1402,6 +1418,7 @@ void User_Option(void)
                         KEY_Set_Vol(*(p + 1));	//发向面板的音量控制
                     }
                     key_msg_rev((BYTE *)pdata + 2 + sizeof(struct MSG_REV_TYPE));
+                    SAVE_IPAD_ip();
                     break;
                 case MSG_OPTION_SERVERWRITE:	//0xbc
                     Device_Link_Scan();
@@ -1467,6 +1484,8 @@ void User_Option(void)
                     break;
                 case 0xff:
                     flag = STATUS_CHANGE;
+                    if(pmsg->device == 0xff) //用于IPAD发送同步信号，保存IP
+                        SAVE_IPAD_ip();
                     break;
                 default:
                     break;

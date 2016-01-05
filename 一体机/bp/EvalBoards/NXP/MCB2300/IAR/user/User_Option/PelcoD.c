@@ -299,7 +299,8 @@ void StopFocus(uint8 portNum)
     pViscaData[6] = 0x0;
     pViscaData[7] = 0x0;
     pViscaData[8] = 0x0;
-    UART_Write(portNum, (uint8 *)&pViscaData[0], VISCA_LENGTH );
+    //UART_Write(portNum,(uint8*)&pViscaData[0],VISCA_LENGTH-3 );
+    UART_Write(portNum, (uint8 *)&pViscaData[0], VISCA_LENGTH - 3 ); //change 2015.10.14
 }
 
 void StopZoom(uint8 portNum)
@@ -312,7 +313,8 @@ void StopZoom(uint8 portNum)
     pViscaData[6] = 0x0;
     pViscaData[7] = 0x0;
     pViscaData[8] = 0x0;
-    UART_Write(portNum, (uint8 *)&pViscaData[0], VISCA_LENGTH );
+    //UART_Write(portNum,(uint8*)&pViscaData[0],VISCA_LENGTH-3 );
+    UART_Write(portNum, (uint8 *)&pViscaData[0], VISCA_LENGTH - 3 ); //change 2015.10.14
 }
 
 void StopPanTilt(uint8 portNum)
@@ -341,7 +343,9 @@ void StopCmd(uint8 portNum, unsigned char *pbuf, unsigned char cProtocol )
     else
     {
         StopPanTilt(portNum);
+        OSTimeDlyHMSM(0, 0, 0, 100); //add 2015.10.14
         StopZoom(portNum);
+        OSTimeDlyHMSM(0, 0, 0, 100); //add 2015.10.14
         StopFocus(portNum);
 
     }

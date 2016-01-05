@@ -407,7 +407,7 @@ void TASK_RUN(void *pdata)
         flag = 0;
 
         IS752_Scan();
-        LMT_Power_Check();
+        //LMT_Power_Check();
         Device_DCS_Contrl();
         RF_CARD_Check();
         

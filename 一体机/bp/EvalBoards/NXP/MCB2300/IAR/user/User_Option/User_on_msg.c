@@ -111,7 +111,7 @@ uint32 On_MSG_OPTION_MSG_RUN(void *pdata)
 
     if (gDeviceTable.Class.ClassCurrNUm < gDeviceTable.Class.ClassTaskNum)
     {
-        if ((classmsg.MsgRec.option >= 16) || (classmsg.MsgRec.option <= 100))
+        if ((classmsg.MsgRec.device >= 16) && (classmsg.MsgRec.device <= 100))
         {
             buf[0] = classmsg.MsgRec.device;
             buf[1] = classmsg.MsgRec.option;
@@ -119,6 +119,9 @@ uint32 On_MSG_OPTION_MSG_RUN(void *pdata)
             buf[2] = classmsg.OptionTime & 0xff;
             //Task_Run_Delay(REALTIME_CIIR_SEC*256+buf[2], buf,2, 1,rev_buf);
             Msg_send(buf, 3, (uint8 *)&Rev);
+
+            if((buf[0] == MSG_DEV_TYJA) && (buf[1] == MSG_OPTION_POWEROPEN)) //2014.9.4 投影机A开机吗延迟重复发送
+                Task_Run_Delay(REALTIME_CIIR_SEC * 256 + buf[2], buf, 2, 1, (uint8 *)&Rev);
 
             LED_Contrl(LED_CONTRL_TIME_OFF, gDeviceTable.Class.TIME_LED_STATE);
             if (gDeviceTable.Class.TIME_LED_STATE == FALSE)
@@ -1794,6 +1797,46 @@ uint32 On_MSG_OPTION(void *pdata)
 
 /////////////////////////////////////////////////////////////////////
 //	函数名称：
+//	函数功能：外置DVI切换器，通过DVD红外学码实现,change 2016.1.5
+//	入口参数：
+//
+//
+//	出口参数：无
+////////////////////////////////////////////////////////////////////
+void Switch_DVI(uint8 in)
+{
+    struct BASE_MSG keymsg;
+    struct MSG_REV_TYPE  ReV;
+    uint8  buf[15];
+
+    if((in == DEV_VGA_PC) || (in == DEV_VGA_NPC) || (in == DEV_VGA_SHOW) || (in == DEV_VGA_DVD))
+    {
+        keymsg.device = MSG_DEV_DVD;
+        ReV.Type = DEVICE_SUB_CLASS;
+        switch(in)
+        {
+        case DEV_VGA_PC:
+            keymsg.option = MSG_OPTION_UP;
+            break;
+        case DEV_VGA_NPC:
+            keymsg.option = MSG_OPTION_DOWN;
+            break;
+        case DEV_VGA_SHOW:
+            keymsg.option = MSG_OPTION_LIFT;
+            break;
+        case DEV_VGA_DVD:
+            keymsg.option = MSG_OPTION_RIGHT;
+            break;
+        }
+        memset(buf, 0, 5);
+        memcpy(buf, (uint8 *)&keymsg, 2);
+        Msg_send(buf, 3, (uint8 *)&ReV);
+        if (Get_Debug(DEV_DEBUG_MSG))
+            IP_printf("Switch_DVI %d",in);
+    }
+}
+/////////////////////////////////////////////////////////////////////
+//	函数名称：
 //	函数功能：
 //	入口参数：
 //
@@ -1808,6 +1851,7 @@ uint32 ON_Device_select(void *pdata)
     struct DEVICE_STATUS_TYPE *ps;
 
     pmsg = (struct BASE_MSG *)((uint8 *)pdata + sizeof(struct MSG_REV_TYPE));
+    //Switch_DVI(pmsg->device);//add 2015.3.19
     ps = (struct DEVICE_STATUS_TYPE *)Get_Device_Status();
     //是当前设备
     if ((ps->Current_Device != pmsg->device) && (pmsg->device != MSG_DEV_PC))
@@ -1962,6 +2006,7 @@ uint32 ON_Device_select(void *pdata)
 //
 //	出口参数：无
 ////////////////////////////////////////////////////////////////////
+extern uint8 PAD_ip[4];
 uint32 Send_State(void)
 {
     BYTE *desip;
@@ -1974,6 +2019,12 @@ uint32 Send_State(void)
     //if (Get_Debug(DEV_DEBUG_MSG))
     if (Get_Debug(DEV_DEBUG_MSG))
         IP_printf("向IP:%d.%d.%d.%d发送状态", *desip, *(desip + 1), *(desip + 2), *(desip + 3));
+
+    desip = PAD_ip;
+    UDP_Send_CMD(buf, sizeof(struct BASE_MSG) + sizeof(struct DEVICE_STATUS_TYPE), desip);
+    if (Get_Debug(DEV_DEBUG_MSG))
+        IP_printf("向PAD，IP:%d.%d.%d.%d发送状态", *desip, *(desip + 1), *(desip + 2), *(desip + 3));
+
     IO_FlagLingt_Flash();
     return 0;
 }
