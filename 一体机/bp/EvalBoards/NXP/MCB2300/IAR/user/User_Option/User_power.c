@@ -52,7 +52,7 @@ void POWER_init(void)
         {
             UART_printf("User Power OK Ver=%d.%d\n", buf[4], buf[5]);
             IP_printf("电源箱自检通过，版本:%d.%d", buf[4], buf[5]);
-            Power_Beep(200);
+            //Power_Beep(200);
             //			OSTimeDlyHMSM(0,0, 1,0);
             //			Power_Beep(200);
             break;

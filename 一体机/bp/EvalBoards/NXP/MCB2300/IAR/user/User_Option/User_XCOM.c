@@ -252,7 +252,7 @@ void XCOM_init(void)
     Xcom_set(DEV_XCOM_DW, 19200, DEV_PROTOCOL_ZYCOM, 0x03);
     Xcom_set(DEV_XCOM_TB, 19200, DEV_PROTOCOL_ZYCOM, 0x03);
     Xcom_set(DEV_XCOM_TYJ, 19200, DEV_PROTOCOL_NONE, 0x03);
-    Xcom_set(DEV_XCOM_SOUND, 9600, DEV_PROTOCOL_NONE, 0x03);
+    Xcom_set(DEV_XCOM_SOUND, 115200, DEV_PROTOCOL_NONE, 0x03);
     Xcom_set(DEV_XCOM_MB, 9600, DEV_PROTOCOL_ZYCOM, 0x03);
     Xcom_set(DEV_XCOM_SCAMERA, 2400, DEV_PROTOCOL_NONE, 0x03);
 
@@ -704,11 +704,11 @@ void XCOM_HDMI(uint8 *pdata)
     uint8 *p; 
     p = ( uint8 *)(pdata + sizeof( struct XCOM_REV_TYPE));
     if (Get_Debug(DEV_DEBUG_MSG))
-        IP_printf("COM HDMI state:%c%c%c",*p, *(p+1),*(p+2) );
+        IP_printf("COM HDMI recv:%02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x\n",*p, *(p+1),*(p+2), *(p+3),*(p+4), *(p+5),*(p+6), *(p+7),*(p+8), *(p+9),*(p+10), *(p+11),*(p+12) );
     
 }
-
-void Switch_HDMI(uint8 in, uint8 out)
+/*
+void Switch_HDMI_0(uint8 in, uint8 out)
 {
   uint8 data[5]={0x05, 0x55, 0x19, 0xff, 0x77};
   uint8 cmd[4][4]={ 0x09, 0x1D, 0x1F, 0x0D,     //out1,in 1-4
@@ -723,6 +723,61 @@ void Switch_HDMI(uint8 in, uint8 out)
       IP_printf("send HDMI cmd:0x%2x 0x%x 0x%x 0x%2x 0x%x\n",data[0],data[1],data[2],data[3],data[4]);
   UART_Write(DEV_XCOM_SOUND, (uint8 *)&data, sizeof(data));
   OSTimeDlyHMSM(0, 0, 0, 100);
+}
+void Switch_HDMI_1(uint8 in, uint8 out)
+{
+  uint8 data[3]={0x61, 0x00, 0x00};
+  uint8 cmd1[4][4]={ 0x30, 0x31, 0x31, 0x30,     //out1,in 1-4
+                    0x31, 0x31, 0x35, 0x30,     //out2,in 1-4
+                    0x35, 0x30, 0x30, 0x30,     //out3,in 1-4
+                    0x31, 0x34, 0x30, 0x35      //out4,in 1-4
+                    };
+  uint8 cmd2[4][4]={ 0x39, 0x44, 0x46, 0x44,     //out1,in 1-4
+                    0x37, 0x32, 0x39, 0x38,     //out2,in 1-4
+                    0x45, 0x36, 0x35, 0x33,     //out3,in 1-4
+                    0x38, 0x34, 0x46, 0x31      //out4,in 1-4
+                    };
+  if( (in > IN_ZBFWQ)||(out > OUT_ZBFWQ)) return;
+  
+  data[1] = cmd1[out][in];
+  data[2] = cmd2[out][in];
+  if (Get_Debug(DEV_DEBUG_MSG))
+      IP_printf("send HDMI cmd:0x%2x 0x%x 0x%x 0x%2x 0x%x\n",data[0],data[1],data[2],data[3],data[4]);
+  UART_Write(DEV_XCOM_SOUND, (uint8 *)&data, sizeof(data));
+  OSTimeDlyHMSM(0, 0, 0, 50);
+}
+void Switch_HDMI_2(uint8 in, uint8 out)
+{
+  uint8 data[8]={0x63, 0x69, 0x72, 0x20, 0x00, 0x00, 0x0D, 0x0A};
+  uint8 cmd[4]={ 0x31, 0x32, 0x33, 0x34};
+  if( (in > IN_ZBFWQ)||(out > OUT_ZBFWQ)) return;
+  
+  data[4] = cmd[out];
+  data[5] = cmd[in];
+  if (Get_Debug(DEV_DEBUG_MSG))
+      IP_printf("send HDMI cmd:0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x 0x%x\n",data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7]);
+  UART_Write(DEV_XCOM_SOUND, (uint8 *)&data, sizeof(data));
+  OSTimeDlyHMSM(0, 0, 0, 100);
+}*/
+void Switch_HDMI(uint8 in, uint8 out)
+{
+  uint8 data[13]={0xA5, 0x5B, 0x02, 0x03, 0xff, 0x00, 0xff, 0x00, 0x00, 0x00, 0x00, 0x00, 0xff};
+  //uint8 cmd[4]={ 0x31, 0x32, 0x33, 0x34};
+  uint8 cmd[4] = {0x01, 0x02, 0x03, 0x04};
+  uint8 end[4][4] = {0xf9, 0xf8, 0xf7, 0xf6,
+                     0xf8, 0xf7, 0xf6, 0xf5,
+                     0xf7, 0xf6, 0xf5, 0xf4,
+                     0xf6, 0xf5, 0xf4, 0xf3};
+  if( (in > IN_ZBFWQ)||(out > OUT_ZBFWQ)) return;
+  
+  data[4] = cmd[in];
+  data[6] = cmd[out];
+  data[12] = end[out][in];
+  if (Get_Debug(DEV_DEBUG_MSG))
+      IP_printf("send HDMI cmd:%02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x\n",
+                data[0],data[1],data[2],data[3],data[4],data[5],data[6],data[7],data[8],data[9],data[10],data[11],data[12]);
+  UART_Write(DEV_XCOM_SOUND, (uint8 *)&data, sizeof(data));
+  OSTimeDlyHMSM(0, 0, 1, 0);
 }
 
 ////////////////////////////////////////////////////////////////////

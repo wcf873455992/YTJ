@@ -85,7 +85,7 @@ void UART_PutChar ( uint8	PortNum, uint8 data)
         U1THR = data;			    // 发送数据
         while( (U1LSR & 0x40) == 0 );	 // 等待数据发送完毕
     }
-    else		if(PortNum == DEV_XCOM_SOUND)
+    else if(PortNum == DEV_XCOM_SOUND)
     {
         U2THR = data;			    // 发送数据
         while( (U2LSR & 0x40) == 0 );	 // 等待数据发送完毕
@@ -209,7 +209,6 @@ void UART_Send_Data(uint8	PortNum, uint8 *pdata, uint8 len)
                 OSSemPend(XCOM_PORT[DEV_XCOM_SOUND].UART_send_end, UART_SEND_WAIT_TIME, &err);
                 if (err != OS_NO_ERR)
                     Xcom_set(DEV_XCOM_SOUND, XCOM_PORT[DEV_XCOM_SOUND].BPS, XCOM_PORT[DEV_XCOM_SOUND].PROTOCOL, XCOM_PORT[DEV_XCOM_SOUND].linecontrl);
-
             }
 
         }
